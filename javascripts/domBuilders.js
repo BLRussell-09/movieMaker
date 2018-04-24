@@ -1,8 +1,10 @@
 const domBuilderInit = (categories) => {
   let domString = '';
   categories.forEach(element => {
-    domString += `<div class="col-xs-12">`;
+    domString += `<div class="row">`;
+    domString += `<div class="col-xs-4">`;
     domString += `<h1>${element.category}</h1>`;
+    domString += `</div>`;
     domString += `</div>`;
     domString += `<div class="row" id="${element.category}"></div>`;
   });
@@ -18,28 +20,28 @@ const domBuilderElem = (movElements) => {
     if (element.categoryId === 'section 1')
     {
       domString1 += `<div class="col-xs-3">`;
-      domString1 += `<h3>${element.name}</h3>`;
+      domString1 += `<label><input class="check" type="checkbox">${element.name}</label>`;
       domString1 += `</div>`;
       printToDom(domString1, 'Actors');
     }
     else if (element.categoryId === 'section 2')
     {
       domString2 += `<div class="col-xs-3">`;
-      domString2 += `<h3>${element.name}</h3>`;
+      domString2 += `<label><input class="check" type="checkbox">${element.name}</label>`;
       domString2 += `</div>`;
       printToDom(domString2, 'Animals and Trainers');
     }
     else if (element.categoryId === 'section 3')
     {
       domString3 += `<div class="col-xs-3">`;
-      domString3 += `<h3>${element.name}</h3>`;
+      domString3 += `<label><input class="check" type="checkbox">${element.name}</label>`;
       domString3 += `</div>`;
       printToDom(domString3, 'Locations');
     }
     else if (element.categoryId === 'section 4')
     {
       domString4 += `<div class="col-xs-3">`;
-      domString4 += `<h3>${element.name}</h3>`;
+      domString4 += `<label><input class="check" type="checkbox">${element.name}</label>`;
       domString4 += `</div>`;
       printToDom(domString4, 'Special Effects');
     }
