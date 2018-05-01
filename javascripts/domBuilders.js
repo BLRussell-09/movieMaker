@@ -20,32 +20,41 @@ const domBuilderElem = (movElements) => {
     if (element.categoryId === 'section 1')
     {
       domString1 += `<div class="col-xs-3">`;
-      domString1 += `<label><input class="check" type="checkbox">${element.name}</label>`;
+      domString1 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
       domString1 += `</div>`;
       printToDom(domString1, 'Actors');
     }
     else if (element.categoryId === 'section 2')
     {
       domString2 += `<div class="col-xs-3">`;
-      domString2 += `<label><input class="check" type="checkbox">${element.name}</label>`;
+      domString2 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
       domString2 += `</div>`;
       printToDom(domString2, 'Animals and Trainers');
     }
     else if (element.categoryId === 'section 3')
     {
       domString3 += `<div class="col-xs-3">`;
-      domString3 += `<label><input class="check" type="checkbox">${element.name}</label>`;
+      domString3 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
       domString3 += `</div>`;
       printToDom(domString3, 'Locations');
     }
     else if (element.categoryId === 'section 4')
     {
       domString4 += `<div class="col-xs-3">`;
-      domString4 += `<label><input class="check" type="checkbox">${element.name}</label>`;
+      domString4 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
       domString4 += `</div>`;
       printToDom(domString4, 'Special Effects');
     }
   });
+};
+
+const outputBuilder = (outputArray) =>
+{
+  let domString = '';
+  outputArray.forEach(element => {
+    domString += `<h3>${element.name}</h3>`;
+  });
+  printToOutput(domString, 'output');
 };
 
 const printToDom = (domString, divId) => {
@@ -53,8 +62,15 @@ const printToDom = (domString, divId) => {
   document.getElementById(divId).innerHTML += domString;
 };
 
+const printToOutput = (domString, divId) =>
+{
+  $(divId).html('');
+  $(divId).html(domString);
+};
+
 module.exports =
 {
   domBuilderInit,
   domBuilderElem,
+  outputBuilder,
 };
