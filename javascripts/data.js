@@ -1,31 +1,31 @@
-const xhr = require('./xhr');
-const domBuilder = require('./domBuilders');
+const dom = require('./domBuilders');
 
-const iLoad = function ()
+let myArr = [];
+
+const addToArray = (newObj) =>
 {
-  const categories = JSON.parse(this.responseText).categories;
-  domBuilder.domBuilderInit(categories);
-  console.log(categories);
-  xhr.startApp2(elementLoad, iFail);
+  myArr.push(newObj);
+
+  const result = myArr.reduce((unique, o) =>
+  {
+    if (!unique.find(obj => obj.name === o.name && obj.id === o.id))
+    {
+      unique.push(o);
+    }
+    return unique;
+  },[]);
+  myArr = result;
+  dom.outputBuilder(myArr);
 };
 
-const elementLoad = function () {
-  const elements = JSON.parse(this.responseText).elements;
-  console.log(elements);
-  domBuilder.domBuilderElem(elements);
-};
-
-const iFail = function ()
+const removeFromArray = (id) =>
 {
-  console.log('You broke it good if you see this message');
-};
-
-const initializer = () =>
-{
-  xhr.startApp(iLoad, iFail);
+  const newArray = myArr.filter(myArr => myArr.id !== id);
+  dom.outputBuilder(newArray);
 };
 
 module.exports =
 {
-  initializer,
+  addToArray,
+  removeFromArray,
 };
