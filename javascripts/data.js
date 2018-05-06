@@ -22,6 +22,9 @@ const removeFromArray = (id) =>
 {
   const newArray = myArr.filter(myArr => myArr.id !== id);
   dom.outputBuilder(newArray);
+  myArr = newArray;
+  console.log(myArr);
+  return myArr;
 };
 
 module.exports =

@@ -1,4 +1,5 @@
 const data = require('./data');
+const progBar = require('./progBar');
 
 const buttonListeners = () =>
 {
@@ -22,10 +23,13 @@ const addNewObj = (e) =>
   {
     const newObject = {'name': $(e.target).parent().text(), 'id': $(e.target).attr('id'),};
     data.addToArray(newObject);
+    progBar();
   }
   else
   {
     console.log('no click');
+    console.log($(e.target).attr('id'));
+    data.removeFromArray($(e.target).attr('id'));
   }
 
 };
