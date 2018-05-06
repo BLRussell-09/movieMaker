@@ -6,7 +6,7 @@ const domBuilderInit = (categories) => {
     domString += `<h1>${element.category}</h1>`;
     domString += `</div>`;
     domString += `</div>`;
-    domString += `<div class="row" id="${element.category}"></div>`;
+    domString += `<div class="row" id="${element.catID}"></div>`;
   });
   printToDom(domString, 'cat-holder');
 };
@@ -29,7 +29,7 @@ const domBuilderElem = (movElements) => {
       domString2 += `<div class="col-xs-3">`;
       domString2 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
       domString2 += `</div>`;
-      printToDom(domString2, 'Animals and Trainers');
+      printToDom(domString2, 'AnimalsandTrainers');
     }
     else if (element.categoryId === 'section 3')
     {
@@ -43,7 +43,7 @@ const domBuilderElem = (movElements) => {
       domString4 += `<div class="col-xs-3">`;
       domString4 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
       domString4 += `</div>`;
-      printToDom(domString4, 'Special Effects');
+      printToDom(domString4, 'SpecialEffects');
     }
   });
 };

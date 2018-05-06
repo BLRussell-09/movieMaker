@@ -2,19 +2,23 @@
   "categories" : [
     {
       "id" : "section 1",
-      "category" : "Actors"
+      "category" : "Actors",
+      "catID" : "Actors"
     },
     {
       "id" : "section 2",
-      "category" : "Animals and Trainers"
+      "category" : "Animals and Trainers",
+      "catID" : "AnimalsandTrainers"
     },
     {
       "id" : "section 3",
-      "category" : "Locations"
+      "category" : "Locations",
+      "catID" : "Locations"
     },
     {
       "id" : "section 4",
-      "category" : "Special Effects"
+      "category" : "Special Effects",
+      "catID" : "SpecialEffects"
     }
   ]
 }
