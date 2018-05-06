@@ -26,6 +26,8 @@ const addNewObj = (e) =>
   else
   {
     console.log('no click');
+    console.log($(e.target).attr('id'));
+    data.removeFromArray($(e.target).attr('id'));
   }
 
 };
