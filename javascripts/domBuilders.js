@@ -51,9 +51,12 @@ const domBuilderElem = (movElements) => {
 const outputBuilder = (outputArray) =>
 {
   let domString = '';
+  let counter = 0;
   outputArray.forEach(element => {
     domString += `<h3>${element.name}</h3>`;
+    counter += +`${element.cost}`;
   });
+  console.log(counter);
   printToOutput(domString, 'output');
 };
 
