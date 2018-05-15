@@ -36,6 +36,36 @@
       "categoryId" : "section 1",
       "name": "Mila Kunis",
       "cost": 80000
+    },
+    {
+      "id" : 7,
+      "categoryId" : "section 2",
+      "name": "CGI Monkeys",
+      "cost": 6000
+    },
+    {
+      "id" : 8,
+      "categoryId" : "section 3",
+      "name": "Haunted Asylum",
+      "cost": 12000
+    },
+    {
+      "id" : 9,
+      "categoryId" : "section 4",
+      "name": "Anti Gravity",
+      "cost": 5000
+    },
+    {
+      "id" : 10,
+      "categoryId" : "section 1",
+      "name": "Jack Black",
+      "cost": 14000
+    },
+    {
+      "id" : 11,
+      "categoryId" : "section 2",
+      "name": "Alien Slugs",
+      "cost": 3000
     }
   ]
 }
