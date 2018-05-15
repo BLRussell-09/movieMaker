@@ -30,6 +30,12 @@
       "categoryId" : "section 4",
       "name": "Pyrotechnics",
       "cost": 40000
+    },
+    {
+      "id" : 6,
+      "categoryId" : "section 1",
+      "name": "Mila Kunis",
+      "cost": 80000
     }
   ]
 }
