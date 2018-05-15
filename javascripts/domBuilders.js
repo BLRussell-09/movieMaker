@@ -1,3 +1,5 @@
+const overBudget = require('./overBudget');
+
 const domBuilderInit = (categories) => {
   let domString = '';
   categories.forEach(element => {
@@ -21,6 +23,7 @@ const domBuilderElem = (movElements) => {
     {
       domString1 += `<div class="col-xs-3">`;
       domString1 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
+      domString1 += `<h4 class="hidden">${element.cost}</h4>`;
       domString1 += `</div>`;
       printToDom(domString1, 'Actors');
     }
@@ -28,6 +31,7 @@ const domBuilderElem = (movElements) => {
     {
       domString2 += `<div class="col-xs-3">`;
       domString2 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
+      domString2 += `<h4 class="hidden">${element.cost}</h4>`;
       domString2 += `</div>`;
       printToDom(domString2, 'AnimalsandTrainers');
     }
@@ -35,6 +39,7 @@ const domBuilderElem = (movElements) => {
     {
       domString3 += `<div class="col-xs-3">`;
       domString3 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
+      domString3 += `<h4 class="hidden">${element.cost}</h4>`;
       domString3 += `</div>`;
       printToDom(domString3, 'Locations');
     }
@@ -42,6 +47,7 @@ const domBuilderElem = (movElements) => {
     {
       domString4 += `<div class="col-xs-3">`;
       domString4 += `<label><input class="check" type="checkbox" id="${element.id}">${element.name}</label>`;
+      domString4 += `<h4 class="hidden">${element.cost}</h4>`;
       domString4 += `</div>`;
       printToDom(domString4, 'SpecialEffects');
     }
@@ -51,18 +57,25 @@ const domBuilderElem = (movElements) => {
 const outputBuilder = (outputArray) =>
 {
   let domString = '';
-  let counter = 0;
+  let counter =  $('#counterBox').text() * 1;
   outputArray.forEach(element => {
-    domString += `<h3>${element.name}</h3>`;
-    counter += +`${element.cost}`;
+    domString += `<h3>${element.name} $${element.cost}</h3>`;
+    counter =  counter - +`${element.cost}`;
   });
   console.log(counter);
+  printCounter(counter);
   printToOutput(domString, 'output');
 };
 
 const printToDom = (domString, divId) => {
   document.getElementById(divId).innerHTML = '';
   document.getElementById(divId).innerHTML += domString;
+};
+
+const printCounter = (numbahz) =>
+{
+  $('#counterBox').html(numbahz);
+  overBudget();
 };
 
 const printToOutput = (domString, divId) =>

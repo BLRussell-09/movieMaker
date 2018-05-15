@@ -1,9 +1,23 @@
 body {
-  background-color: burlywood;
+  background-color: white;
+  background-image: url(https://auditions.com/blog/wp-content/uploads/2017/06/o-BEHIND-THE-SCENES-MOVIE-SET-facebook.jpg);
+  color: white;
 }
 
 output {
   height: 500px;
   width: 500px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+
+#counterBox {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.green {
+  color: green;
+}
+.overBudget {
+  color: red;
 }

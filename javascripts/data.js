@@ -8,7 +8,7 @@ const addToArray = (newObj) =>
 
   const result = myArr.reduce((unique, o) =>
   {
-    if (!unique.find(obj => obj.name === o.name && obj.id === o.id))
+    if (!unique.find(obj => obj.name === o.name && obj.id === o.id && obj.cost === o.cost))
     {
       unique.push(o);
     }

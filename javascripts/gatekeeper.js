@@ -1,6 +1,7 @@
 const xhr = require('./xhr');
 const domBuilder = require('./domBuilders');
 const buttonListener = require('./buttons');
+const budgetSetter = require('./budgetSetter');
 
 const iLoad = function ()
 {
@@ -15,6 +16,7 @@ const elementLoad = function () {
   console.log(elements);
   domBuilder.domBuilderElem(elements);
   buttonListener();
+  budgetSetter.budgetPrompt();
 };
 
 const iFail = function ()
